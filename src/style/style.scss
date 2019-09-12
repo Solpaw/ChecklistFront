@@ -3,7 +3,7 @@ body {
     overflow: hidden;
 
     .mainContainer {
-        background: lightgray;
+        background: white;
         margin-top: 5vh;
         margin-left: 10vh;
         margin-right: 10vh;
@@ -13,21 +13,24 @@ body {
         display: flex;
 
         .listContainer {
-            background: lightgreen;
+            background: lightsteelblue;
             flex: 1;
-            border-radius: 20px 0 0 20px;
+            border-radius: 17px 0 0 17px;
+            overflow: auto;
 
             .listItem {
                 border-bottom: 1px solid black;
                 text-align: center;
                 height: 50px;
                 padding-top: 15px;
+                border-right: 1px solid black;
             }
 
         }
 
         .taskContainer {
             flex: 3;
+            overflow: auto;
 
             .taskItem {
                 border-bottom: 1px solid black;
