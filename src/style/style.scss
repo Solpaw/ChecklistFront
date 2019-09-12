@@ -1,3 +1,40 @@
 body {
-    background-color: lightblue;
+    background: lightyellow;
+    overflow: hidden;
+
+    .mainContainer {
+        background: lightgray;
+        margin-top: 5vh;
+        margin-left: 10vh;
+        margin-right: 10vh;
+        height: 90vh;
+        border: 3px solid gold;
+        border-radius: 20px;
+        display: flex;
+
+        .listContainer {
+            background: lightgreen;
+            flex: 1;
+            border-radius: 20px 0 0 20px;
+
+            .listItem {
+                border-bottom: 1px solid black;
+                text-align: center;
+                height: 50px;
+                padding-top: 15px;
+            }
+
+        }
+
+        .taskContainer {
+            flex: 3;
+
+            .taskItem {
+                border-bottom: 1px solid black;
+                text-align: center;
+                height: 50px;
+                padding-top: 15px;
+            }
+        }
+    }
 }
