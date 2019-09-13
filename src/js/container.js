@@ -12,32 +12,28 @@ const renderContainer = (lists) => {
     taskCont.classList.add('taskContainer');
     cont.appendChild(taskCont);
 
-    let i=0;
-    lists.forEach(element => {
+    lists.map((element,index) => {
         const item = document.createElement('div');
         item.classList.add('listItem');
-        item.setAttribute('id',`${i}`);
+        item.setAttribute('id',`${index}`);
         item.innerHTML = `<div class="ui fitted toggle checkbox">
-                            <input type="checkbox" ${element.checked ? 'checked':''} disabled="disabled" id="listInput${i}">
+                            <input type="checkbox" ${element.checked ? 'checked':''} disabled="disabled" id="listInput${index}">
                             <label></label>
                           </div><span>${element.name}</span>`;
         listCont.appendChild(item);
-        i++;
     });
 }
 
 const displayTasks = (object) => {
     const taskCont = document.querySelector('.taskContainer');
     taskCont.innerHTML = '';
-    let i=0;
-    object.tasks.forEach(element => {
+    object.tasks.map((element,index) => {
         const item = document.createElement('div');
         item.classList.add('taskItem');
         item.innerHTML = `<div class="ui fitted toggle checkbox">
-                            <input type="checkbox" ${element.checked ? 'checked':''}  data-index="${i}">
+                            <input type="checkbox" ${element.checked ? 'checked':''}  data-index="${index}">
                             <label></label>
                           </div><span>${element.name}</span>`;
-        i++;
         taskCont.appendChild(item);
     });
 }
