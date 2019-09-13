@@ -1,4 +1,3 @@
-
 const renderContainer = (lists) => {
     const body = document.querySelector('body');
     const cont = document.createElement('div');
@@ -17,10 +16,30 @@ const renderContainer = (lists) => {
     lists.forEach(element => {
         const item = document.createElement('div');
         item.classList.add('listItem');
-        item.setAttribute('id',`${i++}`)
-        item.innerText = element.name;
+        item.setAttribute('id',`${i}`);
+        item.innerHTML = `<div class="ui fitted toggle checkbox">
+                            <input type="checkbox" ${element.checked ? 'checked':''} disabled="disabled" id="listInput${i}">
+                            <label></label>
+                          </div><span>${element.name}</span>`;
         listCont.appendChild(item);
+        i++;
     });
 }
 
-module.exports = {renderContainer};
+const displayTasks = (object) => {
+    const taskCont = document.querySelector('.taskContainer');
+    taskCont.innerHTML = '';
+    let i=0;
+    object.tasks.forEach(element => {
+        const item = document.createElement('div');
+        item.classList.add('taskItem');
+        item.innerHTML = `<div class="ui fitted toggle checkbox">
+                            <input type="checkbox" ${element.checked ? 'checked':''}  data-index="${i}">
+                            <label></label>
+                          </div><span>${element.name}</span>`;
+        i++;
+        taskCont.appendChild(item);
+    });
+}
+
+module.exports = {renderContainer,displayTasks};

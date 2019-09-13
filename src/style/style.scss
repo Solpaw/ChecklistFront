@@ -5,8 +5,8 @@ body {
     .mainContainer {
         background: white;
         margin-top: 5vh;
-        margin-left: 10vh;
-        margin-right: 10vh;
+        margin-left: 10%;
+        margin-right: 10%;
         height: 90vh;
         border: 3px solid gold;
         border-radius: 20px;
@@ -20,12 +20,22 @@ body {
 
             .listItem {
                 border-bottom: 1px solid black;
-                text-align: center;
                 height: 50px;
-                padding-top: 15px;
                 border-right: 1px solid black;
-            }
+                display: flex;
+                align-items: center;
 
+                span {
+                    flex: 3;
+                    padding-left: 10px;
+                }
+
+                div {
+                    flex: 1;
+                    margin-left: 10px;
+                    min-width: 50px;
+                }
+            }
         }
 
         .taskContainer {
@@ -34,9 +44,19 @@ body {
 
             .taskItem {
                 border-bottom: 1px solid black;
-                text-align: center;
-                height: 50px;
-                padding-top: 15px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+
+                div {
+                    flex:1;
+                    margin-left: 40px;
+                    min-width: 70px;
+                }
+
+                span {
+                    flex:5;
+                }
             }
         }
     }

@@ -9,6 +9,7 @@ const listResetStyle = (count) => {
 const styleSelected = (item) => {
     item.style.borderRight = '1px dashed black';
     item.style.backgroundColor = 'white';
+    return item.id;
 }
 
 module.exports = {listResetStyle, styleSelected};
