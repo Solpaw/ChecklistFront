@@ -1,3 +1,142 @@
+html {
+    scroll-behavior: smooth;    
+}
+
 body {
-    background-color: lightblue;
+    background: lightyellow;
+    font-family: sans-serif;
+    font-size: 1.5em;
+
+    .mainContainer {
+        background: white;
+        margin-top: 5vh;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 80vh;
+        border: 3px solid gold;
+        border-radius: 20px  20px 0 0;
+        display: flex;
+        min-width: 700px;
+        animation:  drop 1.5s ease;
+
+        .listContainer {
+            background: lightsteelblue;
+            flex: 1;
+            border-radius: 17px 0 0 0;
+            overflow: auto;
+
+            .listItem {
+                border-bottom: 1px solid black;
+                height: 50px;
+                border-right: 1px solid black;
+                display: flex;
+                align-items: center;
+
+                span {
+                    flex: 3;
+                    padding-left: 10px;
+                }
+
+                div {
+                    flex: 1;
+                    margin-left: 10px;
+                    min-width: 50px;
+                }
+            }
+        }
+
+        .taskContainer {
+            flex: 3;
+            overflow: auto;
+            border-radius: 0 17px 0 0;
+
+            .taskItem {
+                border-bottom: 1px solid black;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-items: center;
+
+                div {
+                    margin-left: 40px;
+                    min-width: 70px;
+                }
+
+                span {
+                    flex:5;
+                }
+            }
+        }
+    }
+
+    .buttonContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 5vh;
+        display: flex;
+        min-width: 700px;
+        height: 80px;
+        animation:  drop 1.5s ease;
+
+        div {
+            flex: 1;
+
+            button {
+                height: 80px;
+            }
+        }
+    }
+
+    .formContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        min-width: 700px;
+
+        div {
+            border: 3px solid gold;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            button {
+                padding: 20px;
+            }
+        }
+
+        .taskPopup {
+            display: none;
+        }
+
+        .listPopup {
+            display: none;
+        }
+    }
+    .ui.toggle.checkbox input:checked~.box:before,
+    .ui.toggle.checkbox input:checked~label:before {
+        background-color: green !important
+    }
+    .ui.toggle.checkbox input:focus:checked~.box:before,
+    .ui.toggle.checkbox input:focus:checked~label:before {
+        background-color: green !important
+    }
+    .taskContainer:empty::before{
+        content: "You have nothing to do :)";
+        color: green;
+        position: relative;
+        left: 255px;
+        top:250px;
+        font-size: 1.9em;
+        font-weight: 700;
+    }
+
+    @keyframes drop{
+        0%{
+            opacity: 0;
+            transform: translateY(-80px);
+          }
+        100%{
+            opacity: 1;
+            transform: translateY(0px);
+            }
+   }
 }
