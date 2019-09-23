@@ -4,19 +4,15 @@ import List from './List.js';
 import Task from './Task.js';
 import {listResetStyle,styleList, taskResetStyle, styleTask} from './styles.js';
 
-const test = () => {
-    const body = document.querySelector('body');
-    const cont = document.createElement('div');
-    cont.classList.add('ui','container');
-    body.appendChild(cont);
-    const button = document.createElement('button');
-    button.classList.add('ui','button');
-    button.innerText = 'Press here';
-    cont.appendChild(button);
+const allTasksChecked = (object) => {
+    for(let i=0;i<object.tasks.length;i++) {
+        if(!object.tasks[i].checked) return false;
+    }
+    return true;
 }
 
 window.onload = () => {
-    const list = JSON.parse(localStorage.getItem('list')) || populateList();
+    const list = JSON.parse(localStorage.getItem('list')) || [];
     renderContainer(list);
 
     //event listenery do zmiany wyświetlanych tasków
